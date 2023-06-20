@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 
 import "./App.css";
-import ExpenseItem from "./components/ExpenseItem";
+import ExpenseItem from "./components/Expenses/ExpenseItem";
 
 function App() {
   const expenses = [
@@ -25,8 +25,6 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
-
-  
 
   return (
     <>
