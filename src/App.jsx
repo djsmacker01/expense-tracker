@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 import "./App.css";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
+import ExpenseForm from "./components/ExpensesForm/ExpenseForm";
 
 function App() {
   const expenses = [
@@ -36,6 +37,7 @@ function App() {
   return (
     <>
       <div className="expenses">
+        <ExpenseForm/>
         <ExpenseItem
           title={expenses[0].title}
           amount={expenses[0].amount}

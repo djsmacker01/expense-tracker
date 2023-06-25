@@ -1,5 +1,5 @@
 import React from 'react'
-import '../ExpensesForm/ExpensesForm.css'
+import './ExpenseForm.css'
 import Form from './Form';
 function ExpenseForm() {
     return <div className="new-expense">
