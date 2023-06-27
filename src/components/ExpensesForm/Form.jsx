@@ -1,34 +1,55 @@
-import React,{ useState } from "react";
-import './Form.css'
+import React, { useState } from "react";
+import "./Form.css";
 
 function Form() {
-  const [title, setTitle] = useState('title')
+  const [title, setTitle] = useState("title");
 
- const titleHandler = (event) => {
-   setTitle(event.target.value);
-   console.log('click');
-  }
+  const titleHandler = (event) => {
+    setTitle(event.target.value);
+    console.log(event);
+  };
+
+  const amountHandler = (event) => {
+    setTitle(event.target.value);
+    console.log(event);
+  };
+
+  const dateHandler = (event) => {
+    setTitle(event.target.value);
+    console.log(event);
+  };
+
   return (
     <form action="">
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label htmlFor="">{title}</label>
-          <input type="text" onChange={titleHandler}/>
+          <input type="text" onChange={titleHandler} />
         </div>
 
         <div className="new-expense__control">
           <label htmlFor="">Amount</label>
-          <input type="number" min="0.01" step="0.01"/>
+          <input
+            type="number"
+            min="0.01"
+            step="0.01"
+            onChange={amountHandler}
+          />
         </div>
 
         <div className="new-expense__control">
           <label htmlFor="">Date</label>
-          <input type="date" min="2019-01-29" max="2023-03-23" />
+          <input
+            type="date"
+            min="2019-01-29"
+            max="2023-03-23"
+            onChange={dateHandler}
+          />
         </div>
-          </div>
-          <div className="new-expense__actions">
-              <button type="submit">Add Expense</button>
-          </div>
+      </div>
+      <div className="new-expense__actions">
+        <button type="submit">Add Expense</button>
+      </div>
     </form>
   );
 }
