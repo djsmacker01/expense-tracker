@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import "./Form.css";
 
 function Form() {
-  const [title, setTitle] = useState("title");
-
+  const [title, setTitle] = useState("Title");
+  const [amount, setAmount] = useState("Amount");
+  const [date, setDate] = useState("Date");
   const titleHandler = (event) => {
     setTitle(event.target.value);
     console.log(event);
   };
 
   const amountHandler = (event) => {
-    setTitle(event.target.value);
+    setAmount(event.target.value);
     console.log(event);
   };
 
   const dateHandler = (event) => {
-    setTitle(event.target.value);
+    setDate(event.target.value);
     console.log(event);
   };
 
@@ -28,7 +29,7 @@ function Form() {
         </div>
 
         <div className="new-expense__control">
-          <label htmlFor="">Amount</label>
+          <label htmlFor="">{amount}</label>
           <input
             type="number"
             min="0.01"
@@ -38,7 +39,7 @@ function Form() {
         </div>
 
         <div className="new-expense__control">
-          <label htmlFor="">Date</label>
+          <label htmlFor="">{date}</label>
           <input
             type="date"
             min="2019-01-29"
