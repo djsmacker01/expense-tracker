@@ -6,9 +6,11 @@ function Form() {
   const [amount, setAmount] = useState("Amount");
   const [date, setDate] = useState("Date");
 
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
 
   // const buttonHandler = () => {
+  
+  
   //  const value = setCounter(counter + 1);
   //   console.log(value)
   // };
@@ -49,6 +51,7 @@ function Form() {
   //    });
   // };
 // using single function
+  
   const inputChangeHandler = (identifier, value) => { 
    if (identifier === 'title') {
     setTitle(value);
@@ -60,10 +63,22 @@ function Form() {
      setDate(value);
     }
   }
+  const submitHandler = (event) => { 
+    event.preventDefault();
+
+    const expenseDate = {
+      title: title,
+      amount: amount,
+      date: new Date(date)
+    }
+    console.log(expenseDate)
+
+  }
+  
 
   return (
     <>
-      <form action="">
+      <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
           <div className="new-expense__control">
             <label htmlFor="">Title</label>
