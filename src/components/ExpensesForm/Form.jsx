@@ -2,34 +2,51 @@ import React, { useState } from "react";
 import "./Form.css";
 
 function Form() {
-  const [title, setTitle] = useState("Title");
-  const [amount, setAmount] = useState("Amount");
-  const [date, setDate] = useState("Date");
+  // const [title, setTitle] = useState("Title");
+  // const [amount, setAmount] = useState("Amount");
+  // const [date, setDate] = useState("Date");
+
+  // Dealing with single state changes
+  const [userInput, setUserInput] = useState({
+    setTitle: '',
+    setAmount: '',
+    setDate: '',
+  })
   const titleHandler = (event) => {
-    setTitle(event.target.value);
-    console.log(event);
+
+    setUserInput((prevState)=> {
+    return{...prevState,setTitle: event.target.value}
+    })
+    // setTitle(event.target.value);
+    // console.log(event);
   };
 
   const amountHandler = (event) => {
-    setAmount(event.target.value);
-    console.log(event);
+    // setAmount(event.target.value);
+    // console.log(event);
+     setUserInput((prevState) => {
+       return { ...prevState, setAmount: event.target.value };
+     });
   };
 
   const dateHandler = (event) => {
-    setDate(event.target.value);
-    console.log(event);
+    // setDate(event.target.value);
+    // console.log(event);
+     setUserInput((prevState) => {
+       return { ...prevState, setDate: event.target.value };
+     });
   };
 
   return (
     <form action="">
       <div className="new-expense__controls">
         <div className="new-expense__control">
-          <label htmlFor="">{title}</label>
+          <label htmlFor="">Title</label>
           <input type="text" onChange={titleHandler} />
         </div>
 
         <div className="new-expense__control">
-          <label htmlFor="">{amount}</label>
+          <label htmlFor="">Amount</label>
           <input
             type="number"
             min="0.01"
@@ -39,7 +56,7 @@ function Form() {
         </div>
 
         <div className="new-expense__control">
-          <label htmlFor="">{date}</label>
+          <label htmlFor="">Date</label>
           <input
             type="date"
             min="2019-01-29"
