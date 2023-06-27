@@ -1,13 +1,19 @@
-import React from "react";
+import React,{ useState } from "react";
 import './Form.css'
 
 function Form() {
+  const [title, setTitle] = useState('title')
+
+ const titleHandler = (event) => {
+   setTitle(event.target.value);
+   console.log('click');
+  }
   return (
     <form action="">
       <div className="new-expense__controls">
         <div className="new-expense__control">
-          <label htmlFor="">Title</label>
-          <input type="text" />
+          <label htmlFor="">{title}</label>
+          <input type="text" onChange={titleHandler}/>
         </div>
 
         <div className="new-expense__control">
