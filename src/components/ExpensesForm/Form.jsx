@@ -53,16 +53,21 @@ function Form() {
 // using single function
   
   const inputChangeHandler = (identifier, value) => { 
+
    if (identifier === 'title') {
     setTitle(value);
-    }
+   }
+    
    else if (identifier === 'amount') {
      setAmount(value);
-    }
+   }
+     
    else {
      setDate(value);
     }
+
   }
+  
   const submitHandler = (event) => { 
     event.preventDefault();
 
