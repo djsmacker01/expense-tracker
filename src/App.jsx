@@ -1,5 +1,6 @@
 // import { useState } from 'react'
 import "./App.css";
+import ExpenseFilter from "./components/Expenses/ExpenseFilter";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 // import ExpenseForm from "./components/ExpensesForm/ExpenseForm";
 import NewExpense from "./components/ExpensesForm/NewExpense";
@@ -47,7 +48,8 @@ function App() {
     <>
       <div className="expenses">
         {/* <ExpenseForm/> */}
-        <NewExpense addExpenseData={ addExpenseHandler} />
+        <NewExpense addExpenseData={addExpenseHandler} />
+        <ExpenseFilter/>
         <ExpenseItem
           title={expenses[0].title}
           amount={expenses[0].amount}
