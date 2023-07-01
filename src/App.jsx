@@ -37,11 +37,17 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log('App.js')
+    console.log(expense);
+
+  }
+
   return (
     <>
       <div className="expenses">
         {/* <ExpenseForm/> */}
-        <NewExpense/>
+        <NewExpense addExpenseData={ addExpenseHandler} />
         <ExpenseItem
           title={expenses[0].title}
           amount={expenses[0].amount}
