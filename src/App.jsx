@@ -49,7 +49,9 @@ function App() {
       <div className="expenses">
         {/* <ExpenseForm/> */}
         <NewExpense addExpenseData={addExpenseHandler} />
-        <ExpenseFilter/>
+        <div>
+          <ExpenseFilter />
+        </div>
         <ExpenseItem
           title={expenses[0].title}
           amount={expenses[0].amount}
