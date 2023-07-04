@@ -1,11 +1,9 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import "./App.css";
 import ExpenseFilter from "./components/Expenses/ExpenseFilter";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 // import ExpenseForm from "./components/ExpensesForm/ExpenseForm";
 import NewExpense from "./components/ExpensesForm/NewExpense";
-
-
 
 function App() {
   const expenses = [
@@ -20,7 +18,7 @@ function App() {
       id: "e2",
       title: "New TV",
       amount: 799.49,
-      date: new Date(2021, 2, 12)
+      date: new Date(2021, 2, 12),
     },
 
     {
@@ -39,10 +37,15 @@ function App() {
   ];
 
   const addExpenseHandler = (expense) => {
-    console.log('App.js')
+    console.log("App.js");
     console.log(expense);
+  };
+  const [filter, setFilter] = useState('2020');
 
-  }
+  const getExpenseHandler = (selectedYear) => {
+    console.log("App.js");
+    setFilter(selectedYear)
+  };
 
   return (
     <>
@@ -50,7 +53,7 @@ function App() {
         {/* <ExpenseForm/> */}
         <NewExpense addExpenseData={addExpenseHandler} />
         <div>
-          <ExpenseFilter />
+          <ExpenseFilter filter={filter} onChangeFilter={getExpenseHandler} />
         </div>
         <ExpenseItem
           title={expenses[0].title}

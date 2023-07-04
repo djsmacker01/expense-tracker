@@ -76,6 +76,7 @@ function ExpenseForm(props) {
     setAmount(" ");
     setDate(" ");
   };
+  
 
   return (
     <>
