@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from "react";
 import "./App.css";
 import ExpenseFilter from "./components/Expenses/ExpenseFilter";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
@@ -40,24 +40,26 @@ function App() {
     console.log("App.js");
     console.log(expense);
   };
-  const [filter, setFilter] = useState('2020');
-  const [filterDate, setFilterDate] = useState("2019,2021 & 2022");
+  const [filter, setFilter] = useState("2020");
+  // const [filterDate, setFilterDate] = useState("2019,2021 & 2022");
+  let filterInfo = "2019,2021 & 2022";
+
+  if (filter === "2019") {
+    filterInfo = "2020,2021 & 2022";
+  } else if (filter === "2021") {
+    filterInfo = "2019,2020 & 2022";
+  }
+  else if (filter === "2020") { 
+    filterInfo = "2019,2021 & 2022";
+
+  }
+  else {
+    filterInfo = "2019,2020 & 2021";
+  }
 
   const getExpenseHandler = (selectedYear) => {
     console.log("App.js");
-    setFilter(selectedYear)
-    if (selectedYear === "2019") {
-      setFilterDate("2020,2021 & 2022");
-    } else if (selectedYear === "2020") {
-      setFilterDate("2019,2021 & 2022");
-    } else if (selectedYear === "2021") {
-      setFilterDate("2019,2020 & 2022");
-    }
-    else {
-      setFilterDate("2019,2020 & 2021");
-    }
-    
-
+    setFilter(selectedYear);
   };
 
   return (
@@ -68,7 +70,7 @@ function App() {
         <div>
           <ExpenseFilter filter={filter} onChangeFilter={getExpenseHandler} />
         </div>
-        <p>Date for years {filterDate} is hidden</p>
+        <p>Date for years {filterInfo} is hidden</p>
         <ExpenseItem
           title={expenses[0].title}
           amount={expenses[0].amount}
