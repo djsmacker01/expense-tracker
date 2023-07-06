@@ -41,10 +41,23 @@ function App() {
     console.log(expense);
   };
   const [filter, setFilter] = useState('2020');
+  const [filterDate, setFilterDate] = useState("2019,2021 & 2022");
 
   const getExpenseHandler = (selectedYear) => {
     console.log("App.js");
     setFilter(selectedYear)
+    if (selectedYear === "2019") {
+      setFilterDate("2020,2021 & 2022");
+    } else if (selectedYear === "2020") {
+      setFilterDate("2019,2021 & 2022");
+    } else if (selectedYear === "2021") {
+      setFilterDate("2019,2020 & 2022");
+    }
+    else {
+      setFilterDate("2019,2020 & 2021");
+    }
+    
+
   };
 
   return (
@@ -55,6 +68,7 @@ function App() {
         <div>
           <ExpenseFilter filter={filter} onChangeFilter={getExpenseHandler} />
         </div>
+        <p>Date for years {filterDate} is hidden</p>
         <ExpenseItem
           title={expenses[0].title}
           amount={expenses[0].amount}
