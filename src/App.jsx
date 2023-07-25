@@ -71,7 +71,8 @@ function App() {
           <ExpenseFilter filter={filter} onChangeFilter={getExpenseHandler} />
         </div>
         <p>Date for years {filterInfo} is hidden</p>
-        <ExpenseItem
+        {expenses.map((expense) => <ExpenseItem title={ expense.title} amount={expense.amount} date={expense.date} />)}
+        {/* <ExpenseItem
           title={expenses[0].title}
           amount={expenses[0].amount}
           date={expenses[0].date}
@@ -91,7 +92,7 @@ function App() {
           title={expenses[3].title}
           amount={expenses[3].amount}
           date={expenses[3].date}
-        />
+        /> */}
       </div>
     </>
   );
