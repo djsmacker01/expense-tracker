@@ -1,6 +1,7 @@
 import React from "react";
 import "./Expense.css";
 import ExpenseForm from "./ExpenseForm";
+
 function NewExpense(props) {
 
   const saveExpenseData = (enteredExpenseData) => {
