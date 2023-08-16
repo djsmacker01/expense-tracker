@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
+import Card from "./Card";
 
 function ExpenseItem({ title, amount, date }) {
   const [titles, setTitle] = useState(title) 
@@ -11,7 +12,7 @@ function ExpenseItem({ title, amount, date }) {
 
   return (
     <>
-      <div className="expense-item">
+      <Card className="expense-item">
         <ExpenseDate date={date} />
 
         <div className="expense-item__description">
@@ -19,7 +20,7 @@ function ExpenseItem({ title, amount, date }) {
           <div className="expense-item__price">£{amount}</div>
         </div>
         <button onClick={titleHandler}> click me</button>
-      </div>
+      </Card>
     </>
   );
 }
