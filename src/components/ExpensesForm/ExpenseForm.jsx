@@ -83,7 +83,7 @@ function ExpenseForm(props) {
       <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
           <div className="new-expense__control">
-            <label htmlFor="">Title</label>
+            <label>Title</label>
             <input
               type="text"
               onChange={(event) =>
@@ -94,20 +94,20 @@ function ExpenseForm(props) {
           </div>
 
           <div className="new-expense__control">
-            <label htmlFor="">Amount</label>
+            <label>Amount</label>
             <input
               type="number"
               min="0.01"
               step="0.01"
               value={amount}
               onChange={(event) =>
-                inputChangeHandler("amount", event.target.value)
+             inputChangeHandler("amount", event.target.value)
               }
             />
           </div>
 
           <div className="new-expense__control">
-            <label htmlFor="">Date</label>
+            <label>Date</label>
             <input
               type="date"
               min="2019-01-29"

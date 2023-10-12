@@ -6,6 +6,7 @@ import ExpenseItem from "./components/Expenses/ExpenseItem";
 import NewExpense from "./components/ExpensesForm/NewExpense";
 
 const initial_expenses = [
+
   {
     id: "e1",
     title: "Toilet Paper",
@@ -88,7 +89,6 @@ function App() {
           />
         ))}
 
-        
       </div>
     </>
   );
